@@ -1,0 +1,11 @@
+--- djplayer.old/Makefile	2004-08-16 16:58:18.000000000 +0200
++++ djplayer/Makefile	2004-08-16 17:02:55.000000000 +0200
+@@ -9,7 +9,7 @@
+ all:	djplayer
+ 
+ djplayer:	$(OBJS)
+-	$(CC) $(OBJS) -lcurses -o djplayer
++	$(CC) $(CFLAGS) $(OBJS) -lcurses -o djplayer
+ 
+ clean: 
+ 	rm -f *.o core
