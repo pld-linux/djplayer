@@ -1,0 +1,17 @@
+Pliki djplayer.p/djplayer i djplayer/djplayer ró¿ni± siê
+Pliki djplayer.p/djplayer.o i djplayer/djplayer.o ró¿ni± siê
+diff -urN djplayer.p/Makefile djplayer/Makefile
+--- djplayer.p/Makefile	2004-08-16 14:46:01.146126688 +0200
++++ djplayer/Makefile	2004-08-16 14:57:16.555448864 +0200
+@@ -2,9 +2,9 @@
+ CC=	gcc
+ STD=	_GNU_SOURCE
+ OBJS=	djplayer.o
+-
++IDIR= /usr/include/ncurses
+ .c.o:
+-	$(CC) -c $(CFLAGS) -D$(STD) $<
++	$(CC) -c $(CFLAGS) -D$(STD) -I${IDIR} $<
+ 
+ all:	djplayer
+ 
