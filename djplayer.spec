@@ -22,7 +22,7 @@ DJ's Player is a simple CD player for Linux and compatible operating
 systems.
 
 %description -l pl
-DJ's Player jest prostym odtwarzaczem CD pod linuxa i kompatybilnych
+DJ's Player jest prostym odtwarzaczem CD dla Linuksa i kompatybilnych
 systemów operacyjnych.
 
 %prep
@@ -31,12 +31,14 @@ systemów operacyjnych.
 %patch1 -p1
 
 %build
-
-%{__make} CC="%{__cc}" CFLAGS="%{rpmcflags}"
+%{__make} \
+	CC="%{__cc}" \
+	CFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_bindir}
+
 install %{name} $RPM_BUILD_ROOT%{_bindir}
 
 %clean
