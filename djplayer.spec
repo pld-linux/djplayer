@@ -12,6 +12,7 @@ Group:		Applications/Sound
 Source0:	http://tpnet.linux.tucows.com/files/console/media/%{tname}%{tver}.tgz
 # Source0-md5:	d68b90cc3e20303efdfb6afdc2af8944
 Patch0:		%{name}-fixncurses.patch
+Patch1:		%{name}-Makefile_add_CFLAGS.patch
 URL:		http://linux.tucows.com/preview/56677.html
 BuildRequires:	ncurses-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -27,9 +28,11 @@ systemów operacyjnych.
 %prep
 %setup -q -n %{name}
 %patch0 -p1
+%patch1 -p1
+
 %build
 
-%{__make}
+%{__make} CC="%{__cc}" CFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
