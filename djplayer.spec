@@ -3,7 +3,7 @@
 %define	tver	%(echo %{version}|tr -d .)
 
 Summary:	DJ's Player - simple CD Audio player
-Summary(pl):	DJ's Player - prosty odtwarzacz CD Audio
+Summary(pl.UTF-8):   DJ's Player - prosty odtwarzacz CD Audio
 Name:		djplayer
 Version:	1.6
 Release:	1
@@ -21,9 +21,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 DJ's Player is a simple CD player for Linux and compatible operating
 systems.
 
-%description -l pl
+%description -l pl.UTF-8
 DJ's Player jest prostym odtwarzaczem CD dla Linuksa i kompatybilnych
-systemów operacyjnych.
+systemÃ³w operacyjnych.
 
 %prep
 %setup -q -n %{name}
